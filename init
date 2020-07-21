@@ -13,9 +13,9 @@ sudo chmod -R u+x ./*
 docker image pull rafaelcgstz/magento2
 
 git checkout -f windows;
-    sed -i '' -e "s/<project_name>/$1/g" docker-compose.yml \
-    && sed -i '' -e "s/<project_name>/$1/g" docker-compose-dev.yml \
-    && sed -i '' -e "s/<project_name>/$1/g" docker-sync.yml;
+sed -i '' -e "s/<project_name>/$1/g" docker-compose.yml;
+sed -i '' -e "s/<project_name>/$1/g" docker-compose-dev.yml;
+sed -i '' -e "s/<project_name>/$1/g" docker-sync.yml;
 
 if [ ! -e src/index.php ]; then
   echo "<?php phpinfo();" > src/index.php;
